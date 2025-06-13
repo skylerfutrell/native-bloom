@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 60 56% 91%; /* Light Beige */
+    --foreground: 30 10% 20%; /* Dark Brown/Gray for contrast on beige */
+    --card: 60 56% 95%; /* Slightly lighter beige for cards */
+    --card-foreground: 30 10% 20%;
+    --popover: 60 56% 95%;
+    --popover-foreground: 30 10% 20%;
+    --primary: 120 42% 39%; /* Earthy Green */
+    --primary-foreground: 60 30% 98%; /* Light color for text on green */
+    --secondary: 120 20% 80%; /* Lighter Green for secondary elements */
+    --secondary-foreground: 120 42% 30%; /* Darker Green for text on light green */
+    --muted: 60 20% 85%; /* Muted Beige */
+    --muted-foreground: 60 10% 45%;
+    --accent: 14 69% 62%; /* Terracotta */
+    --accent-foreground: 0 0% 100%; /* White text on Terracotta */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 60 20% 80%; /* Beige border */
+    --input: 60 56% 95%; /* Card background for input */
+    --ring: 120 42% 39%; /* Earthy Green for focus rings */
+    --chart-1: 120 42% 39%; /* Earthy Green */
+    --chart-2: 14 69% 62%; /* Terracotta */
+    --chart-3: 40 50% 60%; /* Earthy Yellow/Brown */
+    --chart-4: 100 30% 50%; /* Muted Green */
+    --chart-5: 20 40% 55%; /* Muted Orange */
+    --radius: 0.5rem;
+
+    /* Sidebar variables (can keep default or adjust if sidebar is used) */
+    --sidebar-background: 60 56% 93%; /* Slightly darker beige */
+    --sidebar-foreground: 30 10% 20%;
+    --sidebar-primary: 120 42% 39%; /* Earthy Green */
+    --sidebar-primary-foreground: 60 30% 98%;
+    --sidebar-accent: 14 69% 62%; /* Terracotta */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 60 20% 80%;
+    --sidebar-ring: 120 42% 39%;
+  }
+
+  .dark {
+    /* Define dark theme colors if needed, otherwise can remove or adjust */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 120 42% 60%; /* Lighter Earthy Green for dark */
+    --primary-foreground: 120 90% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 14 69% 70%; /* Lighter Terracotta for dark */
+    --accent-foreground: 14 90% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 120 42% 60%;
+    --chart-1: 120 42% 60%;
+    --chart-2: 14 69% 70%;
+    --chart-3: 40 50% 70%;
+    --chart-4: 100 30% 60%;
+    --chart-5: 20 40% 65%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 120 42% 60%;
+    --sidebar-primary-foreground: 120 90% 10%;
+    --sidebar-accent: 14 69% 70%;
+    --sidebar-accent-foreground: 14 90% 10%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 120 42% 60%;
+  }
+
+  /* High Contrast Mode Theme (applied when .high-contrast is on <html>) */
+  .high-contrast {
+    /* Light High Contrast */
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Black */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 240 100% 50%; /* Bright Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 0 0% 85%; /* Light Gray */
+    --secondary-foreground: 0 0% 0%; /* Black */
+    --muted: 0 0% 90%; /* Slightly darker gray */
+    --muted-foreground: 0 0% 20%; /* Dark Gray */
+    --accent: 60 100% 50%; /* Bright Yellow */
+    --accent-foreground: 0 0% 0%; /* Black */
+    --destructive: 0 100% 50%; /* Bright Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 0 0% 40%; /* Medium Gray */
+    --input: 0 0% 100%; /* White */
+    --ring: 240 100% 50%; /* Bright Blue for focus rings */
+
+    /* Chart colors for High Contrast Light */
+    --chart-1: 240 100% 50%; /* Bright Blue */
+    --chart-2: 0 100% 50%; /* Bright Red */
+    --chart-3: 120 100% 35%; /* Bright Green */
+    --chart-4: 300 100% 50%; /* Bright Magenta */
+    --chart-5: 30 100% 50%; /* Bright Orange */
+
+    /* Sidebar for High Contrast Light */
+    --sidebar-background: 0 0% 95%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 240 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 60 100% 50%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 40%;
+    --sidebar-ring: 240 100% 50%;
+  }
+
+  /* High Contrast Mode for Dark Theme */
+  .dark.high-contrast {
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 200 100% 50%; /* Bright Cyan */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --secondary: 0 0% 15%; /* Dark Gray */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 0 0% 10%; /* Very Dark Gray */
+    --muted-foreground: 0 0% 80%; /* Light Gray */
+    --accent: 60 100% 50%; /* Bright Yellow */
+    --accent-foreground: 0 0% 0%; /* Black */
+    --destructive: 0 100% 60%; /* Lighter Bright Red */
+    --destructive-foreground: 0 0% 0%; /* Black */
+    --border: 0 0% 60%; /* Medium Gray */
+    --input: 0 0% 0%; /* Black */
+    --ring: 200 100% 50%; /* Bright Cyan for focus rings */
+
+    /* Chart colors for High Contrast Dark */
+    --chart-1: 200 100% 50%; /* Bright Cyan */
+    --chart-2: 0 100% 60%; /* Lighter Bright Red */
+    --chart-3: 120 100% 50%; /* Bright Lime Green */
+    --chart-4: 300 100% 60%; /* Bright Pink */
+    --chart-5: 30 100% 60%; /* Bright Orange */
+
+    /* Sidebar for High Contrast Dark */
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 60 100% 50%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 60%;
+    --sidebar-ring: 200 100% 50%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Ensure smooth color transitions */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Add focus styles for better accessibility */
+  *:focus-visible {
+     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+/* Apply high-contrast specific overrides */
+@layer components {
+  .high-contrast {
+    /* Example: Increase border width for better visibility */
+    .border {
+       border-width: 2px !important; /* Use important carefully */
+    }
+    button, input, select, textarea {
+       border-width: 2px !important;
+       border-color: hsl(var(--foreground)) !important;
+    }
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+       border-color: hsl(var(--ring)) !important;
+       box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring)) !important;
+    }
+    /* Ensure links are clearly distinguishable */
+    a {
+      @apply underline text-primary font-bold;
+    }
+    a:visited {
+       /* Maybe a different color for visited links in high contrast */
+      @apply text-purple-600; /* Example */
+    }
+    .dark & a:visited {
+       @apply text-purple-400; /* Example */
+    }
+  }
+}
